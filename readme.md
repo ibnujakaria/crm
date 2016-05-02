@@ -1,26 +1,62 @@
-# Laravel PHP Framework
+Aplikasi CRM Open Source
+===================
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Hey! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class="icon-cog"></i> **Settings** dialog.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Hello, project ini adalah project CRM berbasis PHP. Dibangun menggunakan framework laravel. Berisi setidak beberapa hal berikut:
 
-## Official Documentation
+- Management Leads
+- Management Customers
+- Management Sales
+- Management Product
+- Management Oportunities
+- Management Quotations
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Ada dua actor utama:
+- admin
+- sales
 
-## Contributing
+## Admin
+Akses tak terbatas. Mulai menambah sales, menambah product, dan menambah leads, customers, sebagainya.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Sales
+Sales hanya bisa melakukan beberapa hal sebagai berikut:
+ - menambah, menghapus, mengedit, data berkaitan dengan leads
+ - menambah oportunities terhadap leads tersebut (progress)
+ - melakukan perubahan data terhadap dirinya sendiri
 
-## Security Vulnerabilities
+----------
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Cara install dan kontribusi
+-------------
+
+> - Fork terlebih dahulu project ini dengan akun github anda.
+> - Clone project anda dengan melakukan hal berikut:
+
+```
+$ git clone https://github.com/{username-kamu}/crm.git
+$ cd crm
+$ git remote add upstream https://github.com/hudasanca/crm.git
+$ composer update
+
+```
+> - setelah itu. Buat sebuah database mysql, lalu beri nama terserah keinginan anda
+> - Kopikan file .env.example menjadi file bernama .env (saja)
+> - Isikan detail database anda lalu lakukan
+
+```
+$ php artisan migrate
+$ php artisan db:seed
+```
+
+> Untuk menjalankan program, silakan lakukan perintah berikut:
+> $ php artisan serve
+> lalu buka browser anda, ketikkan alamat localhost:8000
+> **Voila! Project CRM ini sudah terinstall** 
+
+
+
 
 ## License
 
