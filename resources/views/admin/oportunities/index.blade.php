@@ -29,6 +29,9 @@
               Stages
             </th>
             <th>
+              Amount
+            </th>
+            <th>
               Action
             </th>
           </tr>
@@ -55,6 +58,9 @@
                     Prospect
                   @endif
                 @endif
+              </td>
+              <td>
+                Rp. 25.000
               </td>
               <td>
                 <div class="btn-groups">

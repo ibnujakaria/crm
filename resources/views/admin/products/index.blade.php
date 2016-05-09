@@ -29,6 +29,9 @@
               Harga
             </th>
             <th>
+              Stok
+            </th>
+            <th>
               Aksi
             </th>
           </tr>
@@ -64,7 +67,7 @@
 
 @section('modal')
   <div id="modal-new-product" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
 
       <!-- Modal content-->
       <div class="modal-content">
@@ -74,25 +77,35 @@
         </div>
         <div class="modal-body">
           <form class="form" action="" method="get">
-            <div class="form-group">
-              <label>Nama</label>
-              <input class="form-control" type="text" name="name" placeholder="Nama">
-            </div>
-            <div class="form-group">
-              <label>Merk</label>
-              <input class="form-control" type="text" name="merk" placeholder="Merk">
-            </div>
-            <div class="form-group">
-              <label>Harga</label>
-              <input class="form-control" type="number" placeholder="ex: 100000">
-            </div>
-            <div class="form-group">
-              <label>Gambar</label>
-              <div class="">
-                <img src="http://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png" style="width: 100%; height: auto"/>
+            <div class="row">
+              <div class="col-md-7">
+                <div class="form-group">
+                  <label>Nama</label>
+                  <input class="form-control" type="text" name="name" placeholder="Nama">
+                </div>
+                <div class="form-group">
+                  <label>Merk</label>
+                  <input class="form-control" type="text" name="merk" placeholder="Merk">
+                </div>
+                <div class="form-group">
+                  <label>Harga</label>
+                  <input class="form-control" type="number" placeholder="ex: 100000">
+                </div>
+                <div class="form-group">
+                  <label>Stok</label>
+                  <input class="form-control" type="number" placeholder="Stok">
+                </div>
               </div>
-              <div style="margin-top: 10px">
-                <input type="file" name="name" value="">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label>Gambar</label>
+                  <div class="">
+                    <img src="http://duncanlock.net/images/posts/better-figures-images-plugin-for-pelican/dummy-200x200.png" style="width: 100%; height: auto"/>
+                  </div>
+                  <div style="margin-top: 10px">
+                    <input type="file" name="name" value="">
+                  </div>
+                </div>
               </div>
             </div>
           </form>
