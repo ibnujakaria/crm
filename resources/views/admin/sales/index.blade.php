@@ -4,6 +4,10 @@
   Admin | Sales
 @endsection
 
+@section('header')
+  Sales
+@endsection
+
 @section('body')
   <div class="box">
     <div class="box-body">

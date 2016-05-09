@@ -4,6 +4,10 @@
   Admin | Activities
 @endsection
 
+@section('header')
+  Activities
+@endsection
+
 @section('body')
   <div class="box">
     <div class="box-body">

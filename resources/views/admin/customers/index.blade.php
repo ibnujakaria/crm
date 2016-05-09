@@ -4,6 +4,10 @@
   Admin | Customers
 @endsection
 
+@section('header')
+  Customers
+@endsection
+
 @section('body')
   <div class="box">
     <div class="box-body">

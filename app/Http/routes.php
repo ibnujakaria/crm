@@ -17,3 +17,5 @@ Route::get('admin/leads', 'Admin\LeadsController@index');
 Route::get('admin/customers', 'Admin\CustomerController@index');
 Route::get('admin/promo-campaign', 'Admin\PromoCampaignController@index');
 Route::get('admin/activities', 'Admin\ActivityController@index');
+Route::get('admin/products', 'Admin\ProductController@index');
+Route::get('admin/oportunities', 'Admin\OportunityController@index');

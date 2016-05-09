@@ -24,9 +24,19 @@
           <i class="fa fa-check"></i> <span>Customers</span>
         </a>
       </li>
-      <li class="treeview  {{@$menuActive == 'promo-campaign' ? 'active':''}}">
+      {{-- <li class="treeview  {{@$menuActive == 'promo-campaign' ? 'active':''}}">
         <a href="{{url('admin/promo-campaign')}}">
           <i class="fa fa-area-chart"></i> <span>Campaigns</span>
+        </a>
+      </li> --}}
+      <li class="treeview  {{@$menuActive == 'products' ? 'active':''}}">
+        <a href="{{url('admin/products')}}">
+          <i class="fa fa-cart-plus"></i> <span>Products</span>
+        </a>
+      </li>
+      <li class="treeview  {{@$menuActive == 'oportunities' ? 'active':''}}">
+        <a href="{{url('admin/oportunities')}}">
+          <i class="fa fa-balance-scale"></i> <span>Oportunities</span>
         </a>
       </li>
       <li class="treeview  {{@$menuActive == 'activities' ? 'active':''}}">

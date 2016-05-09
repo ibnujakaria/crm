@@ -4,6 +4,10 @@
   Admin | Dashboard
 @endsection
 
+@section('header')
+  Dashboard
+@endsection
+
 @section('body')
 <!-- Small boxes (Stat box) -->
 <div class="row">
