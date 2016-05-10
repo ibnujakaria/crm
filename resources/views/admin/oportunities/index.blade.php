@@ -113,6 +113,10 @@
               </select>
             </div>
             <div class="form-group">
+              <label>Date</label>
+              <input type="date" class="form-control" name="">
+            </div>
+            <div class="form-group">
               <label>Amount</label>
               <input class="form-control" type="number" name="amount" placeholder="1000000">
             </div>
