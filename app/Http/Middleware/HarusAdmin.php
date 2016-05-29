@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class PrepareTheAuthTable
+class HarusAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,15 +15,9 @@ class PrepareTheAuthTable
      */
     public function handle($request, Closure $next)
     {
-      if (\Auth::guard('sales')->check()) {
-        $guard = 'sales';
-      }
-      else {
-        $guard = 'admin';
-      }
-      \Config::set('auth.defaults.guard', $guard);
-
-      view()->share('user_role', $guard);
-      return $next($request);
+        if (\Config::get('auth.defaults.guard') !== 'admin') {
+          abort(403, 'Anda tidak bisa mengakses halaman ini');
+        }
+        return $next($request);
     }
 }

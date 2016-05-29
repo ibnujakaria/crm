@@ -9,11 +9,13 @@
           <i class="fa fa-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
+      @if($user_role === 'admin')
       <li class="treeview {{@$menuActive == 'sales' ? 'active':''}}">
         <a href="{{url('/sales')}}">
           <i class="fa fa-user"></i> <span>Sales</span>
         </a>
       </li>
+      @endif
       <li class="treeview  {{@$menuActive == 'leads' ? 'active':''}}">
         <a href="{{url('/leads')}}">
           <i class="fa fa-users"></i> <span>Leads</span>
@@ -29,11 +31,13 @@
           <i class="fa fa-area-chart"></i> <span>Campaigns</span>
         </a>
       </li> --}}
+      @if($user_role === 'admin')
       <li class="treeview  {{@$menuActive == 'products' ? 'active':''}}">
         <a href="{{url('/products')}}">
           <i class="fa fa-cart-plus"></i> <span>Products</span>
         </a>
       </li>
+      @endif
       <li class="treeview  {{@$menuActive == 'oportunities' ? 'active':''}}">
         <a href="{{url('/oportunities')}}">
           <i class="fa fa-balance-scale"></i> <span>Oportunities</span>
