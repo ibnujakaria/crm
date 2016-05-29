@@ -14,8 +14,8 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('', 'Admin\AdminController@index');
 
   Route::resource('sales', 'Admin\SalesController');
+  Route::resource('/leads', 'Admin\LeadsController');
 
-  Route::get('/leads', 'Admin\LeadsController@index');
   Route::get('/customers', 'Admin\CustomerController@index');
   Route::get('/promo-campaign', 'Admin\PromoCampaignController@index');
   Route::get('/activities', 'Admin\ActivityController@index');
