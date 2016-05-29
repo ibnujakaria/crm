@@ -35,5 +35,18 @@ class CreateSourcesTable extends Migration
     public function down()
     {
       Schema::rename('sources', 'customers');
+      Schema::table('customers', function($table) {
+        $table->string('provinsi');
+        $table->string('kota');
+        $table->string('perusahan');
+        $table->string('source');
+        $table->dropColumn('email');
+        $table->dropColumn('sumber');
+        $table->dropColumn('nama_perusahaan');
+        $table->dropColumn('industri');
+        $table->dropColumn('jenis_kelamin');
+        $table->dropColumn('created_at');
+        $table->dropColumn('updated_at');
+      });
     }
 }

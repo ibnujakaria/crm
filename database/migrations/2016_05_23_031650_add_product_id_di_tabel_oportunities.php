@@ -26,6 +26,7 @@ class AddProductIdDiTabelOportunities extends Migration
     public function down()
     {
         Schema::table('oportunities', function (Blueprint $table) {
+          $table->dropForeign('oportunities_product_id_foreign');
           $table->dropColumn('product_id');
         });
     }
