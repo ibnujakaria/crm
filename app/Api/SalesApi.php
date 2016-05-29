@@ -22,8 +22,11 @@ class SalesApi
     $sales->save();
   }
 
-  public function getAll($rowPerPage = 20)
+  public function getAll($rowPerPage = null)
   {
+    if (!$rowPerPage) {
+      return Sales::all();
+    }
     return Sales::paginate($rowPerPage);
   }
 }

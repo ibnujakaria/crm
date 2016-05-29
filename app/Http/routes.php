@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('/promo-campaign', 'Admin\PromoCampaignController@index');
   Route::get('/activities', 'Admin\ActivityController@index');
   Route::get('/products', 'Admin\ProductController@index');
-  Route::get('/oportunities', 'Admin\OportunityController@index');
+  Route::resource('/oportunities', 'Admin\OportunityController');
   Route::get('/auth/logout', 'Auth\AuthController@logout');
 });
 

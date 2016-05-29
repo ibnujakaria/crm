@@ -11,6 +11,7 @@ class SalesTableSeeder extends Seeder
      */
     public function run()
     {
+      \DB::table('sales')->truncate();
       \App\Sales::create([
         'nama' => 'Sales 1',
         'email' => 'sales@gmail.com',

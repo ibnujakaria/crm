@@ -8,7 +8,7 @@
   <div class="box">
     <div class="box-body">
       <div class="row">
-        <div class="col-md-8 col-md-offset-1">
+        <div class="col-md-8">
           <form class="form" action="{{url('leads')}}" method="post">
             {{csrf_field()}}
             <div class="row">

@@ -24,8 +24,11 @@ class LeadsApi
     $source->save();
   }
 
-  public function getAll($rowPerPage = 20)
+  public function getAll($rowPerPage = null)
   {
+    if (!$rowPerPage) {
+      return Source::all();
+    }
     return Source::paginate($rowPerPage);
   }
 }
