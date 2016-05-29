@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('admin', 'Admin\AdminController@index');
-Route::get('admin/sales', 'Admin\SalesController@index');
-Route::get('admin/leads', 'Admin\LeadsController@index');
-Route::get('admin/customers', 'Admin\CustomerController@index');
-Route::get('admin/promo-campaign', 'Admin\PromoCampaignController@index');
-Route::get('admin/activities', 'Admin\ActivityController@index');
-Route::get('admin/products', 'Admin\ProductController@index');
-Route::get('admin/oportunities', 'Admin\OportunityController@index');
+Route::get('', 'Admin\AdminController@index');
+Route::get('/login', 'Admin\AdminController@index');
+Route::get('/sales', 'Admin\SalesController@index');
+Route::get('/leads', 'Admin\LeadsController@index');
+Route::get('/customers', 'Admin\CustomerController@index');
+Route::get('/promo-campaign', 'Admin\PromoCampaignController@index');
+Route::get('/activities', 'Admin\ActivityController@index');
+Route::get('/products', 'Admin\ProductController@index');
+Route::get('/oportunities', 'Admin\OportunityController@index');
