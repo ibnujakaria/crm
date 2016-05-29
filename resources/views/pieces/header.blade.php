@@ -20,12 +20,12 @@
         <!-- Notifications: style can be found in dropdown.less -->
 
         <!-- Tasks: style can be found in dropdown.less -->
-        
+
         <!-- User Account: style can be found in dropdown.less -->
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src="{{url('assets/dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
-            <span class="hidden-xs">Heri</span>
+            <span class="hidden-xs">{{auth()->user()->nama}}</span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
@@ -54,7 +54,7 @@
                 <a href="#" class="btn btn-default btn-flat">Profile</a>
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <a href="{{url('auth/logout')}}" class="btn btn-default btn-flat">Sign out</a>
               </div>
             </li>
           </ul>
