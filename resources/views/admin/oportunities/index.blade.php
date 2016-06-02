@@ -20,58 +20,70 @@
               No
             </th>
             <th>
-              Sales Name
+              Judul
             </th>
             <th>
-              Leads Name
+              Sales
             </th>
             <th>
-              Stages
+              Nama Client
             </th>
             <th>
-              Amount
+              Status
             </th>
             <th>
-              Action
+              Product
+            </th>
+            <th>
+              Step
+            </th>
+            <th>
+              Aksi
             </th>
           </tr>
         </thead>
         <body>
-          @for($i=0; $i < 10; $i++)
-            <tr>
+          @foreach($oportunities as $key => $oportunity)
+            <tr id-oportunity="{{$oportunity->i}}">
               <td>
-                {{$i + 1}}
+                {{$key + 1}}
               </td>
               <td>
-                Sales {{$i + 1}}
+                {{$oportunity->judul}}
               </td>
               <td>
-                Leads {{$i + 1}}
+                {{$oportunity->sales->nama}}
               </td>
               <td>
-                @if($i % 2 == 0)
-                  Quoted
-                @else
-                  @if($i < 5)
-                    Proposal
-                  @else
-                    Prospect
-                  @endif
-                @endif
+                {{$oportunity->source->nama}}
               </td>
               <td>
-                Rp. 25.000
+                {{$oportunity->source->status}}
               </td>
               <td>
-                <div class="btn-groups">
-                  <button class="btn btn-defalut">Edit</button>
-                  <button class="btn btn-danger">Hapus</button>
+                {{$oportunity->product->nama}}
+              </td>
+              <td>
+                {{$oportunity->jumlah_step}}
+              </td>
+              <td>
+                <div class="btn-group">
+                  <a href="{{url("oportunities/{$oportunity->id}/edit")}}" class="btn btn-default"><span class="fa fa-edit"></span></a>
+                  <button class="btn btn-danger" onclick="hapus({{$oportunity->id}})"><span class="fa fa-trash"></span></button>
                 </div>
               </td>
             </tr>
-          @endfor
+          @endforeach
         </body>
       </table>
     </div>
   </div>
+@endsection
+
+@section('script')
+  <script type="text/javascript">
+    function hapus(id) {
+      confirm("anda yakin akan menghapus " +id)
+    }
+  </script>
 @endsection

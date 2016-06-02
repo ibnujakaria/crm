@@ -43,11 +43,11 @@
           <i class="fa fa-balance-scale"></i> <span>Oportunities</span>
         </a>
       </li>
-      <li class="treeview  {{@$menuActive == 'activities' ? 'active':''}}">
+      <!-- <li class="treeview  {{@$menuActive == 'activities' ? 'active':''}}">
         <a href="{{url('/activities')}}">
           <i class="fa fa-calendar"></i> <span>Activites</span>
         </a>
-      </li>
+      </li> -->
     </ul>
     <!-- /.sidebar -->
   </section>

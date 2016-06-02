@@ -19,12 +19,25 @@ class OportunityApi {
     $oportunity->save();
   }
 
-  public function getAll($rowPerPage = null)
+  public function getById($id)
   {
-    if (!$rowPerPage) {
-      return Oportunity::all();
-    }
+    return Oportunity::find($id);
+  }
 
-    return Oportunity::paginate($rowPerPage);
+  public function getAll()
+  {
+    return Oportunity::orderby('id', 'desc')->get();
+  }
+
+  public function update($id, $request)
+  {
+    $oportunity = Oportunity::find($id);
+    $oportunity->sales_id = $request->sales_id;
+    $oportunity->source_id = $request->source_id;
+    $oportunity->product_id = $request->product_id;
+    $oportunity->judul = $request->judul;
+    $oportunity->deskripsi = $request->deskripsi;
+    $oportunity->jumlah_step = $request->jumlah_step;
+    $oportunity->save();
   }
 }

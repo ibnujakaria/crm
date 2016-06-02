@@ -28,7 +28,8 @@ class OportunityController extends Controller
 
   public function index()
   {
-    return view('admin.oportunities.index');
+    $oportunities = $this->oportunityApi->getAll();
+    return view('admin.oportunities.index', compact('oportunities'));
   }
 
   public function create()
@@ -53,6 +54,24 @@ class OportunityController extends Controller
     }
 
     $this->oportunityApi->create($request->all());
+    return redirect()->to('oportunities');
+  }
+
+  public function edit($id)
+  {
+    $sales = $this->salesApi->getAll();
+    $leads = $this->leadsApi->getAll();
+    $products = $this->productApi->getAll();
+    $oportunity = $this->oportunityApi->getById($id);
+    return view('admin.oportunities.edit', compact('oportunity', 'sales', 'products', 'leads'));
+  }
+
+  public function update(Request $request, $id)
+  {
+    $oportunity = $this->oportunityApi->getById($id);
+
+    $this->oportunityApi->update($id, $request);
+
     return redirect()->to('oportunities');
   }
 }
