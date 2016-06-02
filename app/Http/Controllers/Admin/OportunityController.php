@@ -6,18 +6,21 @@ use Illuminate\Http\Request;
 
 use App\Api\SalesApi;
 use App\Api\LeadsApi;
+use App\Api\ProductApi;
 use App\Api\OportunityApi;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class OportunityController extends Controller
 {
-  protected $salesApi, $leadsApi, $oportunityApi;
+  protected $salesApi, $leadsApi, $oportunityApi, $productApi;
 
-  public function __construct(SalesApi $salesApi, LeadsApi $leadsApi, OportunityApi $oportunityApi)
+  public function __construct(SalesApi $salesApi, LeadsApi $leadsApi, OportunityApi $oportunityApi
+      , ProductApi $productApi)
   {
     $this->salesApi = $salesApi;
     $this->leadsApi = $leadsApi;
+    $this->productApi = $productApi;
     $this->oportunityApi = $oportunityApi;
 
     view()->share('menuActive', 'oportunities');
@@ -32,9 +35,7 @@ class OportunityController extends Controller
   {
     $sales = $this->salesApi->getAll();
     $leads = $this->leadsApi->getAll();
-    $products = [
-      (object) ['id' => 1, 'nama' => 'Lukisan Monalisa']
-    ];
+    $products = $this->productApi->getAll();
 
     return view('admin.oportunities.create', compact('sales', 'leads', 'products'));
   }
@@ -42,6 +43,8 @@ class OportunityController extends Controller
   public function store(Request $request)
   {
     $validator = \Validator::make($request->all(), [
+      'judul' => 'required',
+      'deskripsi' => 'required',
       'jumlah_step' => 'required|numeric'
     ]);
 

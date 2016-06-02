@@ -13,6 +13,8 @@ class OportunityApi {
     $oportunity->sales_id = $values->sales_id;
     $oportunity->source_id = $values->source_id;
     $oportunity->product_id = $values->product_id;
+    $oportunity->judul = $values->judul;
+    $oportunity->deskripsi = $values->deskripsi;
     $oportunity->jumlah_step = $values->jumlah_step;
     $oportunity->save();
   }
