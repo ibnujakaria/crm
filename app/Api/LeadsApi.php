@@ -5,30 +5,19 @@ use App\Source;
 /**
  * Kelas ini digunakan untuk berinteraksi dengan table leads
  */
-class LeadsApi
+class LeadsApi extends SourceApi
 {
 
-  public function insert(array $values)
+  public function insert(array $values, $status = 'leads')
   {
-    $values = (object) $values;
-    $source = new Source;
-    $source->nama = $values->nama;
-    $source->email = $values->email;
-    $source->sumber = $values->sumber;
-    $source->nama_perusahaan = $values->nama_perusahaan;
-    $source->industri = $values->industri;
-    $source->alamat = $values->alamat;
-    $source->tanggal_lahir = $values->tanggal_lahir;
-    $source->status = "leads";
-    $source->jenis_kelamin = $values->jenis_kelamin;
-    $source->save();
+    parent::insert($values, 'leads');
   }
 
   public function getAll($rowPerPage = null)
   {
     if (!$rowPerPage) {
-      return Source::all();
+      return Source::leads()->get();
     }
-    return Source::paginate($rowPerPage);
+    return Source::leads()->paginate($rowPerPage);
   }
 }

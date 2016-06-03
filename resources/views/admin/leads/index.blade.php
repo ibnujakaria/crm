@@ -62,9 +62,9 @@
               </td>
               <td>
                 <div class="btn-group">
-                  <button class="btn btn-defalut">Edit</button>
-                  <button class="btn btn-danger">Hapus</button>
-                  <button class="btn btn-success">Pindah ke Customers</button>
+                  <button class="btn btn-default"><span class="fa fa-edit"></span></button>
+                  <button class="btn btn-primary"><span class="fa fa-exchange"></span></button>
+                  <a class="btn btn-danger"><span class="fa fa-trash"></span></a>
                 </div>
               </td>
             </tr>

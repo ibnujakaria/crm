@@ -32,7 +32,7 @@
               Alamat
             </th>
             <th>
-              Dari Sales
+              Nama Perusahaan
             </th>
             <th>
               Aksi
@@ -40,35 +40,34 @@
           </tr>
         </thead>
         <body>
-          @for($i=0; $i < 10; $i++)
+          @foreach($customers as $key => $customer)
             <tr>
               <td>
-                {{$i + 1}}
+                {{$key + 1}}
               </td>
               <td>
-                C0{{$i + 1}}
+                S0{{$customer->id}}
               </td>
               <td>
-                Hafiz Udin
+                {{$customer->nama}}
               </td>
               <td>
-                hafizudin@sales.com
+                {{$customer->email}}
               </td>
               <td>
-                Sampang
+                {{$customer->alamat}}
               </td>
               <td>
-                Andi Budi
+                {{$customer->nama_perusahaan}}
               </td>
               <td>
                 <div class="btn-group">
-                  <button class="btn btn-defalut">Edit</button>
-                  <button class="btn btn-danger">Hapus</button>
-                  <button class="btn btn-success">Pindah ke Sales</button>
+                  <button class="btn btn-default"><span class="fa fa-edit"></span></button>
+                  <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
                 </div>
               </td>
             </tr>
-          @endfor
+          @endforeach
         </body>
       </table>
     </div>
