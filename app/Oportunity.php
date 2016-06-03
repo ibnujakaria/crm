@@ -20,4 +20,9 @@ class Oportunity extends Model
   {
     return $this->belongsTo('App\Sales');
   }
+
+  public function activities()
+  {
+    return $this->hasMany('App\Activity');
+  }
 }

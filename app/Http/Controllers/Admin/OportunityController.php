@@ -74,4 +74,10 @@ class OportunityController extends Controller
 
     return redirect()->to('oportunities');
   }
+
+  public function show($id)
+  {
+    $oportunity =  $this->oportunityApi->getById($id);
+    return view('admin.oportunities.show', compact('oportunity'));
+  }
 }

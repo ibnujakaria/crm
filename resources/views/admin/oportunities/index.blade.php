@@ -68,6 +68,7 @@
               </td>
               <td>
                 <div class="btn-group">
+                  <a href="{{url("oportunities/{$oportunity->id}")}}" class="btn btn-default"><span class="fa fa-eye"></span></a>
                   <a href="{{url("oportunities/{$oportunity->id}/edit")}}" class="btn btn-default"><span class="fa fa-edit"></span></a>
                   <button class="btn btn-danger" onclick="hapus({{$oportunity->id}})"><span class="fa fa-trash"></span></button>
                 </div>

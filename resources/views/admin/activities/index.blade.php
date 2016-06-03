@@ -11,7 +11,7 @@
 @section('body')
   <div class="box">
     <div class="box-body">
-      <button class="btn btn-primary">Tambah Activity</button>
+      <a class="btn btn-primary">Tambah Activity</a>
 
       <table class="table">
         <thead>
