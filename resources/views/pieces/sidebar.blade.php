@@ -37,6 +37,11 @@
           <i class="fa fa-cart-plus"></i> <span>Products</span>
         </a>
       </li>
+      <li class="treeview  {{@$menuActive == 'products' ? 'active':''}}">
+        <a href="{{url('/quotations')}}">
+          <i class="fa fa-dollar"></i> <span>Quotation</span>
+        </a>
+      </li>
       @endif
       <li class="treeview  {{@$menuActive == 'oportunities' ? 'active':''}}">
         <a href="{{url('/oportunities')}}">
