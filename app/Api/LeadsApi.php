@@ -16,8 +16,16 @@ class LeadsApi extends SourceApi
   public function getAll($rowPerPage = null)
   {
     if (!$rowPerPage) {
-      return Source::leads()->get();
+      return Source::desc()->leads()->get();
     }
-    return Source::leads()->paginate($rowPerPage);
+    return Source::desc()->leads()->paginate($rowPerPage);
+  }
+
+  public function exchange($id)
+  {
+    $source = Source::find($id);
+    $source->status = 'customer';
+    $source->save();
+    return $source;
   }
 }

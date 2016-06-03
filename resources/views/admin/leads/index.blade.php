@@ -63,7 +63,7 @@
               <td>
                 <div class="btn-group">
                   <button class="btn btn-default"><span class="fa fa-edit"></span></button>
-                  <button class="btn btn-primary"><span class="fa fa-exchange"></span></button>
+                  <a href="{{url("leads/{$lead->id}/exchange")}}" class="btn btn-primary"><span class="fa fa-exchange"></span></a>
                   <a class="btn btn-danger"><span class="fa fa-trash"></span></a>
                 </div>
               </td>

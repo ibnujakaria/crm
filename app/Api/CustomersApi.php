@@ -14,8 +14,8 @@ class CustomersApi extends SourceApi
   public function getAll($rowPerPage = null)
   {
     if (!$rowPerPage) {
-      return Source::customers()->get();
+      return Source::desc()->customers()->get();
     }
-    return Source::customers()->paginate($rowPerPage);
+    return Source::desc()->customers()->paginate($rowPerPage);
   }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
+use App\Source;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -49,5 +50,12 @@ class LeadsController extends Controller
 
     $this->leadsApi->insert($request->all());
     return redirect()->to('leads');
+  }
+
+  public function exchange($source)
+  {
+    $this->leadsApi->exchange($source);
+
+    return redirect()->to('customers');
   }
 }

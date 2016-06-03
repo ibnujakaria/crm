@@ -15,6 +15,7 @@ Route::group(['middleware' => 'auth'], function() {
 
   Route::resource('sales', 'Admin\SalesController');
   Route::resource('/leads', 'Admin\LeadsController');
+  Route::get('/leads/{leads}/exchange', 'Admin\LeadsController@exchange');
   Route::get('/customers', 'Admin\CustomerController@index');
   Route::get('/promo-campaign', 'Admin\PromoCampaignController@index');
   Route::resource('/products', 'Admin\ProductController');

@@ -15,4 +15,9 @@ class Source extends Model
   {
     return $query->where('status', 'customer');
   }
+
+  public function scopeDesc($query)
+  {
+    return $query->orderby('id', 'desc');
+  }
 }
