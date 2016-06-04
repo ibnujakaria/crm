@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
+use App\Sales;
 use App\Api\SalesApi;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -50,5 +51,16 @@ class SalesController extends Controller
     $this->salesApi->insert($request->all());
 
     return redirect()->to('sales');
+  }
+
+  public function edit(Sales $sales)
+  {
+    return view('admin.sales.edit', compact('sales'));
+  }
+
+  public function update(Request $request, Sales $sales)
+  {
+    $this->salesApi->update($request, $sales);
+    return redirect()->to("sales");
   }
 }

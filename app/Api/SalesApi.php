@@ -29,4 +29,16 @@ class SalesApi
     }
     return Sales::paginate($rowPerPage);
   }
+
+  public function update($request, $sales)
+  {
+    $sales->nama = $request->nama ? $request->nama : $sales->nama;
+    $sales->email = $request->email ? $request->email : $sales->email;
+    $sales->alamat = $request->alamat ? $request->alamat : $sales->alamat;
+    $sales->status_perkawinan = $request->status_perkawinan? $request->status_perkawinan : $sales->status_perkawinan;
+    $sales->jenis_kelamin = $request->jenis_kelamin ? $request->jenis_kelamin : $sales->jenis_kelamin;
+    $sales->save();
+
+    return $sales;
+  }
 }
