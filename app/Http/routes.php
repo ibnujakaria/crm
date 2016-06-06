@@ -21,6 +21,8 @@ Route::group(['middleware' => 'auth'], function() {
   Route::resource('/products', 'Admin\ProductController');
   Route::resource('/oportunities', 'Admin\OportunityController');
   Route::resource('/oportunities/{oportunity}/activities', 'Admin\ActivityController');
+  Route::resource('/reports', 'Admin\ReportsController');
+  Route::resource('/quotations', 'Admin\QuotationsController');
   Route::get('/auth/logout', 'Auth\AuthController@logout');
 });
 
